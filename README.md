@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+//Check if create-react-app is installed
+
+//Install globally if not already there then we can run from our git directory
+### `npm install -g create-react-app`
+### `create-react-app mwfportal`
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,3 +72,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### npm install react-data-grid --save
+### npm install react-bootstrap bootstrap
+### npm install immutable
+### npm install --save-dev css-loader
+## Add to Webpack config -      { test: /\.css$/i, use: ['style-loader', 'css-loader'], },
