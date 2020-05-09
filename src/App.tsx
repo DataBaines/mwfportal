@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Components/Header';
 import Body from './Components/Body';
 import SideMenu from './Components/SideMenu';
-import DataGridBasic from './Components/DataGridBasic';
 
 function App() {
   
@@ -20,5 +19,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
