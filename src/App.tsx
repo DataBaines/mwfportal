@@ -13,7 +13,7 @@ function App() {
           <SideMenu />
         </div>
         <div id = "middle" >
-		      <Body />
+		      {/* <Body /> */}
         </div>
       </div>
     </div>
