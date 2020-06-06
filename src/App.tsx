@@ -1,21 +1,32 @@
-import React from 'react';
-import Header from './Components/Header';
-import Body from './Components/Body';
-import SideMenu from './Components/SideMenu';
+import React from 'react'
+import Header from './Components/Header'
+import Home from './Components/Home'
+import ConfDesp from './Components/ConfDesp'
+import SideMenu from './Components/SideMenu'
+import Invoice from './Components/Invoice'
+import Error from './Components/Error'
+import { Route, Switch } from "react-router-dom"
+import Login from './Components/Login'
+import { PrivateRoute } from './Components/PrivateRoute'
+import CustWklyDesps from './Components/CustWklyDesps/CustWklyDesps'
 
 function App() {
   
   return (
     <div className="App222">
       <Header />
-      <div id = "container" >
-        <div id ="left" >
-          <SideMenu />
-        </div>
-        <div id = "middle" >
-		      <Body />
-        </div>
+
+      <div id = "middle" >
+        <Switch>
+          <PrivateRoute path="/" component={Home} exact />
+          <PrivateRoute path="/confdesp" component={ConfDesp} />
+          <PrivateRoute path="/custwklydesps" component={CustWklyDesps} />
+          <PrivateRoute path="/invoice" component={Invoice} />
+          <Route path="/login" component={Login} />
+          <Route component={Error} />
+        </Switch>
       </div>
+
     </div>
   );
 }

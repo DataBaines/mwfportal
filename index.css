@@ -24,26 +24,92 @@ code {
 }
 
 .header {
-  background-color: #0a2863;
+  /* background-color: #0a2863; */
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.headerlogo {
+  width: 100%;
+}
+
+.link {
+  margin: 15px;
+  color: azure;
+}
+
+.link:hover{
+  color: rgb(189, 233, 29);
+}
+
+.navitem {
+  margin-left: 30px;
+  padding: 10px;
+  background-color: dimgray;  
+  width: 100%;
+}
+
+.paramtable {
+  margin: auto;
+  text-align: Left;
+}
+
+.datepicker {
+  background-color: rgb(231, 230, 230);
+}
+
+.datedetail {
+  font-size: small;
+  color: darkcyan;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 20px;
+}
+
+.custbutton {
+  margin: 6px;
+  color: blanchedalmond;
+  background-color: darkslategray;
+}
+
+.reportdescr {
+  border: black;
+  width: 100%;
+}
+
+.tableparams {
+  font-weight: bold;
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 6px;
+}
+
+.downloadlink {
+  float: right;
+  margin-right: 30px;
+}
+
+.tabletitle {
+  width: 100%
+}
+
+#rbtitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-small;
+  float: right;
 }
 
 #container{
   width: 100%;
 }
 
-#left {
-  float: left;
-  width: 20%;
-}
-
 #middle {
   float: left;
-  width: 80%;
+  width: 100%;
+}
+
+td {
+  padding: 20px;
 }

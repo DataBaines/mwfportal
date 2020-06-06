@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+/js
+/dist
+/_services/users.tsx
+
 # testing
 /coverage
 

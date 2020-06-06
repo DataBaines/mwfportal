@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    // publicPath: '/'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jpg']
@@ -17,5 +18,8 @@ module.exports = {
       {test: /\.css$/i, use: ['style-loader', 'css-loader'],
       },
     ]
-  }
+  },
+  // devServer: {
+  //   historyApiFallback: true,
+  // },
 };

@@ -74,7 +74,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 ### npm install react-data-grid --save
+### npm install --save @types/react-data-grid
 ### npm install react-bootstrap bootstrap
 ### npm install immutable
 ### npm install --save-dev css-loader
+### npm i immutable
+### npm i react-scripts
 ## Add to Webpack config -      { test: /\.css$/i, use: ['style-loader', 'css-loader'], },
+### npm i match-sorter
+### npm i axios
+### npm install react-datepicker --save
+### npm install @material-ui/core --save
+### npm install @material-ui/icons --save
+### 

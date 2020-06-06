@@ -6,22 +6,30 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-const react_data_grid_1 = __importDefault(require("react-data-grid"));
-require("react-data-grid/dist/react-data-grid.css");
+//import 'react-data-grid/dist/react-data-grid.css';
+const defaultColumnProperties = {
+    sortable: true
+};
 const cols = [
-    { key: 'id', name: 'ID' },
-    { key: 'customer', name: 'Title' },
-    { key: 'despdate', name: 'Desp Date' },
-    { key: 'weight', name: 'Weight' },
-    { key: 'reg_date', name: 'Reg Date' }
+    { accessor: 'id', Header: 'ID' },
+    { accessor: 'customer', Header: 'Customer' },
+    { accessor: 'despdate', Header: 'Desp Date' },
+    { accessor: 'weight', Header: 'Weight', Cell: props => react_1.default.createElement("span", { className: 'number' }, props.value) },
+    { accessor: 'reg_date', Header: 'Reg Date' }
+]; //.map(c => ({ ...c, ...defaultColumnProperties }));;
+const columns = [
+    {
+        Header: 'Name',
+        accessor: 'name' // String-based value accessors!
+    },
+    {
+        Header: 'Age',
+        accessor: 'age',
+        Cell: props => react_1.default.createElement("span", { className: 'number' }, props.value) // Custom cell components!
+    }
 ];
-const rows = [{ id: 0, customer: 'C1', despdate: '2020-05-21', weight: 26.1, reg_date: '2020-05-21' },
-    { id: 1, customer: 'C2', despdate: '2020-05-22', weight: 214.1, reg_date: '2020-05-23' }];
 function DataGridBasic(props) {
     const { data } = props;
     const [error, setError] = react_1.useState(null);
@@ -39,39 +47,11 @@ function DataGridBasic(props) {
             .then((result) => {
             setIsLoaded(true);
             setItems(result);
-        }, 
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
+        }, (error) => {
             setIsLoaded(true);
             setError(error);
         });
     }, []);
-    // useEffect(() => {
-    //   fetch("https://7k7zi7zooe.execute-api.eu-west-2.amazonaws.com/dev/basics", {
-    //     method: 'get',
-    //     headers: {
-    //        'Accept': 'application/json',
-    //        'Content-Type': 'application/json'
-    //     }
-    //   }
-    //   )
-    //   .then((res) => {
-    //     console.log(res)
-    //     return res.json()
-    //   })
-    //   .then(
-    //     (result) => {
-    //       setIsLoaded(true);
-    //       setItems(result.items);
-    //     },
-    //     (error) => {
-    //       setIsLoaded(true);
-    //       setError(error);
-    //     }
-    //   )
-    // }, [])
     if (error) {
         return react_1.default.createElement("div", null,
             "Error: ",
@@ -81,10 +61,14 @@ function DataGridBasic(props) {
         return react_1.default.createElement("div", null, "Loading...");
     }
     else {
-        return (
-        //<p>{JSON.stringify(items)}</p>
-        react_1.default.createElement(react_data_grid_1.default, { columns: cols, rows: items }));
+        return (react_1.default.createElement("div", null,
+            react_1.default.createElement("p", null, JSON.stringify(items)),
+            react_1.default.createElement("p", null, items.length)));
     }
 }
+const ROW_COUNT = 2;
+//Test data
+const rows = [{ id: 0, customer: 'C1', despdate: '2020-05-21', weight: 26.1, reg_date: '2020-05-21' },
+    { id: 1, customer: 'C2', despdate: '2020-05-22', weight: 214.1, reg_date: '2020-05-23' }];
 exports.default = DataGridBasic;
 //# sourceMappingURL=DataGridBasic.js.map
