@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/js
+#Removed /js 06/06/20
 /dist
 
 
