@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { userService } from '../_services/loginServices'
+import ApiConf from '../_helpers/apiConf'
 
 function Login (props)  {
     
@@ -42,7 +43,7 @@ function Login (props)  {
         }
 
         setLoading(true)
-        userService.login(username, password, 'https://7k7zi7zooe.execute-api.eu-west-2.amazonaws.com/dev/login')
+        userService.login(username, password, ApiConf.url + 'login')
         .then(
             user => {
                 const { from } = props.location.state || { from: { pathname: "/" } };
