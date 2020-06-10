@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-const Logo_MWF_jpg_1 = __importDefault(require("../../resources/Logo-MWF.jpg"));
+const Logo_MWF_jpg_1 = __importDefault(require("../Resources/Logo-MWF.jpg"));
 const react_router_dom_1 = require("react-router-dom");
 function Header() {
     const linkStyle = {

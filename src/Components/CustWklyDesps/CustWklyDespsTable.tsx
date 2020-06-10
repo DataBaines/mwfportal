@@ -108,17 +108,17 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                     accessor: 'ServiceName',
                 },
                 {
-                    Header: 'Parcel Price',
-                    accessor: d => {
-                        return d.ParcelPrice ? d.ParcelPrice.toFixed(2) : '0.00'
-                        },
-                },
-                {
                     Header: 'Order Price',
                     accessor: d => {
                         return d.OrderPrice ? d.OrderPrice.toFixed(2) : '0.00'
                         },
                 },            
+                {
+                    Header: 'Additions',
+                    accessor: d => {
+                        return d.Additions ? d.Additions.toFixed(2) : '0.00'
+                        },
+                },
             ],
           },
         ],

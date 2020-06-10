@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from  '../../resources/Logo-MWF.jpg'
+import Logo from  '../Resources/Logo-MWF.jpg'
 import { Link } from 'react-router-dom'
 
 function Header () {

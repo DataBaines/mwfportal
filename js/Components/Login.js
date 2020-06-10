@@ -6,9 +6,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const loginServices_1 = require("../_services/loginServices");
+const apiConf_1 = __importDefault(require("../_helpers/apiConf"));
 function Login(props) {
     const [username, setUsername] = react_1.useState('');
     const [password, setPassword] = react_1.useState('');
@@ -40,7 +44,7 @@ function Login(props) {
             return;
         }
         setLoading(true);
-        loginServices_1.userService.login(username, password, 'https://7k7zi7zooe.execute-api.eu-west-2.amazonaws.com/dev/login')
+        loginServices_1.userService.login(username, password, apiConf_1.default.url + 'login')
             .then(user => {
             const { from } = props.location.state || { from: { pathname: "/" } };
             props.history.push(from);
