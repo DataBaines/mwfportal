@@ -8,15 +8,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: '/'
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'jpg']
-  },
+  // resolve: {
+  //   extensions: [ '.js'] //'.ts', '.tsx', , '.jpg'
+  // },
   module:{
     rules: [ 
-      {test: /\.tsx?$/, loader: 'ts-loader'} ,
+      // {test: /\.tsx?$/, loader: 'ts-loader'} ,
       {test: /\.(png|jpg|gif)$/i, use: [ { loader: 'file-loader', options: { publicPath: 'dist' } }]  },
-      {test: /\.css$/i, use: ['style-loader', 'css-loader'],
-      },
+      {test: /\.css$/i, use: ['style-loader', 'css-loader'], },
+      {test: /index\.html/, loader: 'file-loader', query: { name: '[name].[ext]' } },
     ]
   },
   // devServer: {
