@@ -8,7 +8,6 @@ function Home() {
       <p>
           <Link to="/login">Logout</Link>
       </p>
-
     </div>
   )
 }

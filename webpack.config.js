@@ -19,7 +19,4 @@ module.exports = {
       {test: /index\.html/, loader: 'file-loader', query: { name: '[name].[ext]' } },
     ]
   },
-  // devServer: {
-  //   historyApiFallback: true,
-  // },
 };
