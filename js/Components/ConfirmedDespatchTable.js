@@ -45,7 +45,7 @@ function ConfirmedDespatchTable({ queryDate, matched, customer }) {
             }
             catch (error) {
                 setIsError(true);
-                setError(error);
+                setError(error.message);
             }
             setIsLoading(false);
         });
@@ -142,7 +142,7 @@ function ConfirmedDespatchTable({ queryDate, matched, customer }) {
         },
     ], []);
     return (react_1.default.createElement("div", null,
-        isError && react_1.default.createElement("div", null,
+        isError && react_1.default.createElement("div", { className: 'error' },
             "Something went wrong ... ",
             error),
         isLoading ? (react_1.default.createElement("div", null, "Loading ...")) :

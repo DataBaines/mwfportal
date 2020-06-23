@@ -27,7 +27,7 @@ function ConfirmedDespatchTable( {queryDate, matched, customer} ) {
           setData(result.data[0])
         } catch (error) {
           setIsError(true)
-          setError(error)
+          setError(error.message)
         }
 
         setIsLoading(false)
@@ -135,7 +135,7 @@ function ConfirmedDespatchTable( {queryDate, matched, customer} ) {
  
     return (
         <div>
-            {isError && <div>Something went wrong ... {error}</div>}
+            {isError && <div className='error'>Something went wrong ... {error}</div>}
     
             {isLoading ? (<div>Loading ...</div>) : 
             (

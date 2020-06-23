@@ -44,7 +44,7 @@ function CustWklyDespsTable({ yearWeek, customer, selDate }) {
             }
             catch (error) {
                 setIsError(true);
-                setError(error);
+                setError(error.message + '/r/n' + error.response.data.code);
             }
             setIsLoading(false);
         });
@@ -131,9 +131,9 @@ function CustWklyDespsTable({ yearWeek, customer, selDate }) {
         },
     ], []);
     return (react_1.default.createElement("div", null,
-        isError && react_1.default.createElement("div", null,
-            "Something went wrong ... ",
-            error),
+        isError && (react_1.default.createElement("div", { className: 'error' },
+            "The API call failed with error: ",
+            error)),
         isLoading ? (react_1.default.createElement("div", null, "Loading ...")) :
             (react_1.default.createElement("div", null,
                 react_1.default.createElement("div", { className: 'tabletitle' },

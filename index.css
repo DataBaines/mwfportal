@@ -95,6 +95,10 @@ code {
   width: 100%
 }
 
+.error {
+  color: red;
+}
+
 #rbtitle {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: x-small;

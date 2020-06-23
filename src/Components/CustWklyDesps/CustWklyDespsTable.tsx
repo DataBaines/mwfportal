@@ -27,7 +27,7 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
           setData(result.data[0])
         } catch (error) {
           setIsError(true)
-          setError(error)
+          setError(error.message + ' : ' + error.response.data.code)
         }
 
         setIsLoading(false)
@@ -127,12 +127,12 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
  
     return (
         <div>
-            {isError && <div>Something went wrong ... {error}</div>}
-    
+            {isError && (<div className='error'>The API call failed with error: {error}</div>)}
+
             {isLoading ? (<div>Loading ...</div>) : 
             (
-              <div>
-                               
+            <div>
+                            
                 <div className='tabletitle'>
                     <span className='tableparams'>Customer: {customer} Week: {yearWeek} ({getSaturdayFridayString(selDate)})</span>
                     <span className='downloadlink'>
@@ -142,8 +142,9 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                         <BaseTable columns={columns} data={data} />
                     </Styles>
                 </div>
-              </div>
+            </div>
             )}
+               
         </div>    
     )
 }
